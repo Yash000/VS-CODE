@@ -7,11 +7,9 @@ import { Strategy } from "passport-local";
 import GoogleStrategy from "passport-google-oauth2";
 import session from "express-session";
 import env from "dotenv";
-import axios from "axios";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { name } from "ejs";
-import { ok } from "assert";
+
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));const app = express();
@@ -190,6 +188,7 @@ app.delete("/delete_post/:id", async (req, res) => {
     res.redirect("/login");
   }
 });
+
 
 // Start the server
 app.listen(3000, () => {
