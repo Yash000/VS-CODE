@@ -1,0 +1,37 @@
+{
+  "name": "fb-job",
+  "version": "1.0.0",
+  "description": "Job posting app in facebook page",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "job",
+    "post",
+    "facebook",
+    "page",
+    "staff",
+    "small",
+    "business"
+  ],
+  "author": "Yash Baidya",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/blob": "^0.23.2",
+    "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
+    "blob-util": "^2.0.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "passport": "^0.7.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.11.3"
+  }
+}

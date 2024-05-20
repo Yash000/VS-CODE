@@ -1,0 +1,135 @@
+<%- include('partials/header') %>
+
+<section class="container">
+  <div class="columns is-multiline" data-theme="light">
+    <div class="column is-4 is-offset-4 register">
+      <div class="columns">
+        <!-- <div class="column left">
+          <h1 class="title is-1">Super Cool Website</h1>
+          <h2 class="subtitle colored is-4">Lorem ipsum dolor sit amet.</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            ex deleniti aliquam tempora libero excepturi vero soluta odio optio
+            sed.
+          </p>
+        </div> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-4">Sign in</h1>
+          <p class="description">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </p>
+          <form action="/login" method="POST">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  placeholder="Email"
+                  name="username"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                />
+              </div>
+            </div>
+            <button class="button is-block is-primary is-fullwidth is-medium">
+              Submit
+            </button>
+            <br />
+          </form>
+          <!-- <a
+            class="button is-block is-primary is-fullwidth is-medium"
+            href="/auth/google"
+            role="button"
+          >
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a> -->
+          <small><em>Lorem ipsum dolor sit amet consectetur.</em></small>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4 is-offset-4">
+      <br />
+      <nav>
+        <div class="level-item">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+          &emsp;
+          <span class="icon">
+            <i class="fab fa-facebook"></i>
+          </span>
+          &emsp;
+          <span class="icon">
+            <i class="fab fa-instagram"></i>
+          </span>
+          &emsp;
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+          &emsp;
+          <span class="icon">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+        <br />
+        <div class="level-item">
+
+          <small style="color: var(--textLight)">
+            &copy; Super Cool Website. All Rights Reserved.
+          </small>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
+<!--
+
+  <div class="container mt-5">
+    <h1>Login</h1>
+    
+    <div class="row">
+      <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" />
+            </div>
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<%- include('partials/footer') %>

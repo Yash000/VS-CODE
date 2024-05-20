@@ -1,0 +1,171 @@
+<%- include('partials/header') %>
+
+<section class="container">
+  <div class="columns is-multiline" data-theme="light">
+    <div class="column is-8 is-offset-2 register">
+      <div class="columns">
+        <div class="column left">
+          <h1 class="title is-1">Super Cool Website</h1>
+          <h2 class="subtitle colored is-4">Lorem ipsum dolor sit amet.</h2>
+          <p>
+            , ipsum dolor sit amet consectetur adipisicing elit. Corporis ex
+            deleniti aliquam tempora libero excepturi vero soluta odio optio
+            sed.
+          </p>
+        </div>
+        <div class="column right has-text-centered">
+          <h1 class="title is-4">Sign up today</h1>
+          <p class="description">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </p>
+          <form action="/register" method="POST">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  placeholder="Email"
+                  name="username"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="tel"
+                  placeholder="Mobile"
+                  name="mobile"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  placeholder="Business Name"
+                  name="business_name"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  placeholder="Address"
+                  name="address"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="url"
+                  placeholder="Google Map Link"
+                  name="google_map_link"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                />
+              </div>
+            </div>
+            <button class="button is-block is-primary is-fullwidth is-medium">
+              Submit
+            </button>
+            <br />
+          </form>
+          <!-- <a
+          class="button is-block is-primary is-fullwidth is-medium"
+          href="/auth/google"
+          role="button"
+          >
+          <i class="fab fa-google"></i>
+          Sign Up with Google
+        </a> -->
+          <small><em>Lorem ipsum dolor sit amet consectetur.</em></small>
+        </div>
+      </div>
+    </div>
+    <div class="column is-8 is-offset-2">
+      <br />
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+            &emsp;
+            <span class="icon">
+              <i class="fab fa-facebook"></i>
+            </span>
+            &emsp;
+            <span class="icon">
+              <i class="fab fa-instagram"></i>
+            </span>
+            &emsp;
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            &emsp;
+            <span class="icon">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="level-right">
+          <small class="level-item" style="color: var(--textLight)">
+            &copy; Super Cool Website. All Rights Reserved.
+          </small>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
+<!-- <div class="container mt-5">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" />
+            </div>
+            <button type="submit" class="btn btn-dark">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<%- include('partials/footer') %>
