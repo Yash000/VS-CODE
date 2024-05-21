@@ -191,8 +191,8 @@ app.delete("/delete_post/:id", async (req, res) => {
 
 
 // Start the server
-app.listen(8000, () => {
-  console.log("Server is running on port 3000");
+app.listen(9000, () => {
+  console.log("Server is running on port 9000");
 });
 
 passport.use(
