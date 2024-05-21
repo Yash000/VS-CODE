@@ -121,7 +121,7 @@ app.post("/register", async (req, res) => {
           const user = result.rows[0];
           req.login(user, (err) => {
             console.log("success");
-            res.redirect("/form");
+            res.redirect("/dashboard");
           });
         }
       });
