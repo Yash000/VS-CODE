@@ -10,9 +10,8 @@ import env from "dotenv";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
-
-
-const __dirname = dirname(fileURLToPath(import.meta.url));const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const app = express();
 const saltRounds = 10;
 env.config();
 app.use(
@@ -66,12 +65,16 @@ app.get("/form", (req, res) => {
     res.redirect("/login");
   }
 });
-app.get("/dashboard", async(req, res) => {
+app.get("/dashboard", async (req, res) => {
   if (req.isAuthenticated()) {
-
-    const posts=await db.query("SELECT * FROM posts WHERE user_id=$1",[req.user.id]);
+    const posts = await db.query("SELECT * FROM posts WHERE user_id=$1", [
+      req.user.id,
+    ]);
     console.log(posts.rows);
-    res.render("dashboard/dashboard.ejs",{posts:posts.rows,name:req.user.b_name});
+    res.render("dashboard/dashboard.ejs", {
+      posts: posts.rows,
+      name: req.user.b_name,
+    });
   } else {
     res.redirect("/login");
   }
@@ -179,7 +182,7 @@ app.delete("/delete_post/:id", async (req, res) => {
         req.params.id,
       ]);
       console.log(response.rows[0]);
-      res.json({ok:true});
+      res.json({ ok: true });
     } catch (err) {
       console.log(err);
       res.redirect("/dashboard");
@@ -189,10 +192,9 @@ app.delete("/delete_post/:id", async (req, res) => {
   }
 });
 
-
 // Start the server
-app.listen(9000, () => {
-  console.log("Server is running on port 9000");
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
 });
 
 passport.use(
