@@ -180,7 +180,7 @@ app.delete("/delete_post/:id", async (req, res) => {
     try {
     const post = await db.query("SELECT post_id FROM posts WHERE id=$1", [
       req.params.id,
-    ]).data.rows[0];
+    ]).rows[0];
     let config = {
       method: "delete",
       maxBodyLength: Infinity,
