@@ -178,6 +178,25 @@ app.post("/form", async (req, res) => {
 app.delete("/delete_post/:id", async (req, res) => {
   if (req.isAuthenticated()) {
     try {
+    const post_id = await db.query("SELECT post_id FROM posts WHERE id=$1", [
+      req.params.id,
+    ]).data.rows[0].post_id;
+    let config = {
+      method: "delete",
+      maxBodyLength: Infinity,
+      url: `https://graph.facebook.com/v20.0/${post_id}?access_token=${process.env.FB_ACCESS_TOKEN}`,
+      headers: {},
+    };
+
+    await axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
       const response = await db.query("DELETE FROM posts WHERE id=$1", [
         req.params.id,
       ]);
