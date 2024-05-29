@@ -9,6 +9,7 @@ import session from "express-session";
 import env from "dotenv";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import axios from "axios";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -137,12 +138,12 @@ app.post("/form", async (req, res) => {
         "SELECT * FROM users WHERE email=$1",
         [req.user.email]
       );
-      const title = req.body.title;
-      const description = req.body.description;
-      const email = req.user.email;
-      const qualification = req.body.qualification;
-      const salary = req.body.salary;
-      const role = req.body.role;
+      const title = req.body.title==''?null:req.body.title;
+      const description = req.body.description==''?null:req.body.description;
+      const email = req.user.email==''?null:req.user.email;
+      const qualification = req.body.qualification==''?null:req.body.qualification;
+      const salary = typeof parseInt(req.body.salary)=='number'?null:parseInt(req.body.salary);
+      const role = req.body.role==''?null:req.body.role;
 
       console.log(
         company_data.rows[0].id,
@@ -178,25 +179,25 @@ app.post("/form", async (req, res) => {
 app.delete("/delete_post/:id", async (req, res) => {
   if (req.isAuthenticated()) {
     try {
-    const post = await db.query("SELECT post_id FROM posts WHERE id=$1", [
-      req.params.id,
-    ]).rows[0];
-    let config = {
-      method: "delete",
-      maxBodyLength: Infinity,
-      url: `https://graph.facebook.com/v20.0/${post.post_id}?access_token=${process.env.FB_ACCESS_TOKEN}`,
-      headers: {},
-    };
-    if(post.status=="success"){
-    await axios
-      .request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
+      const post_id = await db.query("SELECT post_id FROM posts WHERE id=$1", [
+        req.params.id,
+      ]);
+      console.log(post_id);
+      let config = {
+        method: "delete",
+        maxBodyLength: Infinity,
+        url: `https://graph.facebook.com/v20.0/${post_id.rows[0].post_id}?access_token=${process.env.FB_ACCESS_TOKEN}`,
+        headers: {},
+      };
+
+      await axios
+        .request(config)
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       const response = await db.query("DELETE FROM posts WHERE id=$1", [
         req.params.id,
       ]);
